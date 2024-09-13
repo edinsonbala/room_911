@@ -1,0 +1,11 @@
+first_name,last_name,internal_id,department_id,room_access
+Ana,Morales,EMP001237,1,true
+Luis,Garcia,EMP001238,2,false
+Maria,Lopez,EMP001239,3,true
+Carlos,Herrera,EMP001240,1,false
+Isabel,Rodriguez,EMP001241,2,true
+Jorge,Perez,EMP001242,3,false
+Patricia,Martinez,EMP001243,1,true
+Fernando,Jimenez,EMP001244,2,false
+Laura,Castro,EMP001245,3,true
+Andres,Muñoz,EMP001246,1,false

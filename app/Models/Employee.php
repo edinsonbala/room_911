@@ -22,4 +22,12 @@ class Employee extends Model
     {
         return $this->belongsTo(Department::class);
     }
+    public function accessAttempts()
+    {
+        return $this->hasMany(AccessAttempt::class);
+    }
+    public function accessAttemptsCount()
+    {
+        return $this->accessAttempts()->count();
+    }
 }

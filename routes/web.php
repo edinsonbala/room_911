@@ -35,10 +35,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/employees', [EmployeeController::class, 'auth'])->name('employee.showAuth');
+Route::post('/employees', [EmployeeController::class, 'auth'])->name('employee.auth');
 Route::prefix('dashboard')->group(function(){
     Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.index');
-    Route::get('/employees/paginate', [EmployeeController::class, 'paginate'])->name('employee.paginate');
     Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employee.create');
     Route::post('/employees', [EmployeeController::class, 'store'])->name('employee.store');
+    Route::get('/employees/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
+    Route::put('/employees/{id}', [EmployeeController::class, 'update'])->name('employee.update');
+    Route::post('/employees/{id}/toggle-room-access', [EmployeeController::class, 'toggleRoomAccess'])->name('employees.toggle-room-access');
+    Route::get('employees/{id}/history-pdf', [EmployeeController::class, 'historyPdf'])->name('employee.historyPdf');
+    Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+    Route::post('/employees/import-csv', [EmployeeController::class, 'importCsv'])->name('employee.importCsv');
 });
 require __DIR__.'/auth.php';
