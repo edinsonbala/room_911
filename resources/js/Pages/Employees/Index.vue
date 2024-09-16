@@ -9,10 +9,10 @@ import TextInput from '@/Components/TextInput.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 
 const props = defineProps<{
-    employees: Array<any>;
-    currentPage: number;
-    lastPage: number;
-    search: string;
+    employees: any;
+    currentPage: any;
+    lastPage: any;
+    search: any;
     departments: Array<{ value: number; name: string }>;
 }>();
 
@@ -24,7 +24,7 @@ const loading = ref(false);
 
 const filter = ref({
     searchQuery: props.search || '',
-    department_id: null,
+    department_id: "",
     startDate: '',
     endDate: '',
 });
@@ -55,7 +55,7 @@ const search = () => {
 const clearFilter = () => {
     filter.value = {
         searchQuery: '',
-        department_id: null,
+        department_id: "",
         startDate: '',
         endDate: '',
     };
